@@ -149,7 +149,8 @@ function drawChart(title, pair, labels, signed) {
     values.push(pair[1][i]);
   }
 
-  const left = 80;
+  // Adjusted left margin down to 60 since the text is now vertical
+  const left = 60; 
   const right = 18;
   const top = 30;
   const bottom = 20;
@@ -243,10 +244,18 @@ function drawChart(title, pair, labels, signed) {
 
   ctx.stroke();
 
+  // Draw the encoding title rotated vertically
+  ctx.save();
   ctx.fillStyle = "#222";
   ctx.font = "bold 14px Arial";
-  ctx.textAlign = "left";
-  ctx.fillText(title, 8, height / 2);
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  
+  ctx.translate(24, height / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText(title, 0, 0);
+  
+  ctx.restore();
 }
 
 function generate() {
