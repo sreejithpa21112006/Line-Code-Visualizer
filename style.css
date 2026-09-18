@@ -29,30 +29,6 @@ header p {
   color: #666;
 }
 
-.tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.tab {
-  background: #ddd;
-  color: #222;
-}
-
-.tab.active {
-  background: #1f77b4;
-  color: white;
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
 .controls {
   background: white;
   border: 1px solid #ddd;
@@ -64,7 +40,7 @@ header p {
 label {
   display: block;
   font-weight: bold;
-  margin: 0 0 6px;
+  margin-bottom: 6px;
 }
 
 input {
@@ -155,11 +131,7 @@ button:hover {
     width: 96%;
   }
 
-  .tabs {
-    flex-direction: column;
-  }
-
-  .tab {
+  button {
     width: 100%;
   }
 }
