@@ -114,7 +114,6 @@ button:hover {
 .chart-card canvas {
   display: block;
   width: 100%;
-  min-width: 680px;
   height: 155px;
 }
 
