@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Communication Waveform Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Digital Communication Waveform Generator</h1>
+      <p>Line Coding and DSSS</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="lineCoding">Line Coding</button>
+      <button class="tab" data-tab="dsss">DSSS</button>
+    </div>
+
+    <section id="lineCoding" class="tab-content active">
+      <div class="controls">
+        <label for="lineData">Data Sequence</label>
+        <input id="lineData" type="text" value="101110" inputmode="numeric" maxlength="100">
+        <button id="lineGenerate">Generate Line Coding</button>
+        <p id="lineError" class="error"></p>
+      </div>
+      <div id="lineSummary" class="summary"></div>
+      <div id="lineCharts"></div>
+    </section>
+
+    <section id="dsss" class="tab-content">
+      <div class="controls">
+        <label for="dsssData">Data Sequence</label>
+        <input id="dsssData" type="text" value="101110" inputmode="numeric" maxlength="64">
+
+        <label for="dsssPn">PN Sequence</label>
+        <input id="dsssPn" type="text" value="101100111001" inputmode="numeric" maxlength="128">
+
+        <button id="dsssGenerate">Generate DSSS</button>
+        <p id="dsssError" class="error"></p>
+      </div>
+      <div id="dsssSummary" class="summary"></div>
+      <div id="dsssCharts"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
