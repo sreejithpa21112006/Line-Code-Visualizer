@@ -3,47 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Communication Waveform Generator</title>
+  <title>Line Code Generator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="container">
     <header>
-      <h1>Digital Communication Waveform Generator</h1>
-      <p>Line Coding and DSSS</p>
+      <h1>Line Code Generator</h1>
+      <p>Digital Communication Line Coding Waveforms</p>
     </header>
 
-    <div class="tabs">
-      <button class="tab active" data-tab="lineCoding">Line Coding</button>
-      <button class="tab" data-tab="dsss">DSSS</button>
-    </div>
-
-    <section id="lineCoding" class="tab-content active">
-      <div class="controls">
-        <label for="lineData">Data Sequence</label>
-        <input id="lineData" type="text" value="101110" inputmode="numeric" maxlength="100">
-        <button id="lineGenerate">Generate Line Coding</button>
-        <p id="lineError" class="error"></p>
-      </div>
-      <div id="lineSummary" class="summary"></div>
-      <div id="lineCharts"></div>
+    <section class="controls">
+      <label for="dataInput">Data Sequence</label>
+      <input id="dataInput" type="text" value="101110" inputmode="numeric" maxlength="100">
+      <button id="generateBtn">Generate Line Coding</button>
+      <p id="error" class="error"></p>
     </section>
 
-    <section id="dsss" class="tab-content">
-      <div class="controls">
-        <label for="dsssData">Data Sequence</label>
-        <input id="dsssData" type="text" value="101110" inputmode="numeric" maxlength="64">
-
-        <label for="dsssPn">PN Sequence</label>
-        <input id="dsssPn" type="text" value="101100111001" inputmode="numeric" maxlength="128">
-
-        <button id="dsssGenerate">Generate DSSS</button>
-        <p id="dsssError" class="error"></p>
-      </div>
-      <div id="dsssSummary" class="summary"></div>
-      <div id="dsssCharts"></div>
+    <section class="summary">
+      <div><span>Data Sequence</span><strong id="dataResult">101110</strong></div>
+      <div><span>Number of Bits</span><strong id="countResult">6</strong></div>
+      <div><span>Encodings</span><strong>7</strong></div>
     </section>
+
+    <section id="charts"></section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
